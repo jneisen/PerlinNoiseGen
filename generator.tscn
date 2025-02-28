@@ -1,14 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://oqtyp1tk5ya2"]
+[gd_scene load_steps=2 format=3 uid="uid://oqtyp1tk5ya2"]
 
-[ext_resource type="Script" path="res://perlin_noise_generator.gd" id="1_4i387"]
-[ext_resource type="Texture2D" uid="uid://cyrbeac2xo4c3" path="res://perlin_noise2.png" id="2_cix4c"]
+[ext_resource type="PackedScene" uid="uid://c6fligyv3ot8l" path="res://perlinNoiseGen.tscn" id="1_m2vsn"]
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_4i387")
+[node name="Main" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(10, 10)
-texture = ExtResource("2_cix4c")
+[node name="Node2D" parent="." instance=ExtResource("1_m2vsn")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-z_index = -10
+zoom = Vector2(0.25, 0.25)

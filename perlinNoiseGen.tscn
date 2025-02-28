@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6fligyv3ot8l"]
+
+[ext_resource type="Script" path="res://perlin_noise_generator.gd" id="1_2eomg"]
+[ext_resource type="Texture2D" uid="uid://cyrbeac2xo4c3" path="res://perlin_noise2.png" id="2_cn73o"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_2eomg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(10, 10)
+texture = ExtResource("2_cn73o")
