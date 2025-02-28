@@ -10,7 +10,7 @@ var _image : Image
 var _texture : Texture2D
 var _packed_byte_array : PackedByteArray # will store the image data
 var rng = RandomNumberGenerator.new()
-var permutation# = MakePermutation()
+var permutation
 
 func _ready():
 	rng.seed = seed_val
@@ -65,10 +65,10 @@ func Lerp(t, a, b):
 	
 func MakePermutation():
 	var _permutation = []
-	for x in range(0, SIZE * SIZE):
+	for x in (SIZE):
 		_permutation.push_back(x)
 	_permutation = Shuffle(_permutation)
-	for x in range(0, SIZE * SIZE):
+	for x in (SIZE):
 		_permutation.push_back(_permutation[x])
 	return _permutation
 
@@ -84,7 +84,7 @@ func GetConstantVector(v):
 		return Vector2(-1.0, -1.0)
 
 func Shuffle(arrayToShuffle):
-	for e in range(0, SIZE * SIZE - 1):
+	for e in range(0, SIZE - 1):
 		var index = round(rng.randf() * e - 1)
 		var temp = arrayToShuffle[e]
 		
